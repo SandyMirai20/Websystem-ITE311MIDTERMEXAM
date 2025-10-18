@@ -6,7 +6,7 @@ use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 
-class AdminGuard implements FilterInterface
+class AuthFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
@@ -15,9 +15,7 @@ class AdminGuard implements FilterInterface
             return redirect()->to('/login')->with('error', 'Please login first.');
         }
 
-        if ($session->get('role') !== 'admin') {
-            return redirect()->to('/dashboard')->with('error', 'Access denied. Admin privileges required.');
-        }
+        // Allow access to all logged-in users
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)

@@ -32,7 +32,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <small class="text-muted">
                                         <i class="bi bi-calendar me-1"></i>
-                                        Posted on: <?= date('F j, Y \a\t g:i A', strtotime($announcement['created_at'])) ?>
+                                        Posted on: <?= date('F j, Y, g:i', strtotime($announcement['created_at'])) ?>
                                     </small>
                                     <?php if (session()->get('role') === 'admin'): ?>
                                         <div class="btn-group btn-group-sm">
