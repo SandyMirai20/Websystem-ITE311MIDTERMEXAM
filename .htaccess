@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /GOMEZ/
+    
+    # Redirect to public directory if not already there
+    RewriteCond %{REQUEST_URI} !^/GOMEZ/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
