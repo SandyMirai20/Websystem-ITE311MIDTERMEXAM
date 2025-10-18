@@ -6,7 +6,6 @@
   <title>Student Portal - <?= $title ?? 'Dashboard' ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     :root {
       --primary-color: #0b0b8b;
@@ -36,7 +35,7 @@
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="/dashboard">
       <img src="https://rmmc.edu.ph/public/images/high_quality_logo.png" alt="Logo" style="height: 30px; margin-right: 10px;">
-      <span>Student Portal</span>
+      <span>RMMC</span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false">
       <span class="navbar-toggler-icon"></span>
@@ -45,15 +44,9 @@
       <ul class="navbar-nav me-auto">
         <?php if ($session->get('isLoggedIn')): ?>
           <?php if ($session->get('role') === 'admin'): ?>
-            <li class="nav-item"><a class="nav-link" href="/admin/dashboard"><i class="bi bi-speedometer2 me-1"></i> Admin Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/students"><i class="bi bi-people me-1"></i> Students</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/courses"><i class="bi bi-journal-bookmark me-1"></i> Courses</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/faculty"><i class="bi bi-person-workspace me-1"></i> Faculty</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/dashboard">Dashboard</a></li>
           <?php else: ?>
-            <li class="nav-item"><a class="nav-link" href="/student/dashboard"><i class="bi bi-speedometer2 me-1"></i> My Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link" href="/student/courses"><i class="bi bi-journal-bookmark me-1"></i> My Courses</a></li>
-            <li class="nav-item"><a class="nav-link" href="/student/grades"><i class="bi bi-journal-text me-1"></i> My Grades</a></li>
-            <li class="nav-item"><a class="nav-link" href="/student/schedule"><i class="bi bi-calendar3 me-1"></i> Class Schedule</a></li>
+            <li class="nav-item"><a class="nav-link" href="/student/dashboard">Dashboard</a></li>
           <?php endif; ?>
         <?php endif; ?>
       </ul>

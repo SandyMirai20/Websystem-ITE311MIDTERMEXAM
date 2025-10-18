@@ -22,6 +22,12 @@ class UserSeeder extends Seeder
                 'password_hash' => password_hash('urabestudent123', PASSWORD_DEFAULT),
                 'role'          => 'student',
             ],
+            [
+                'name'          => 'Jim Jamero',
+                'email'         => 'jamero@gmail.com',
+                'password_hash' => password_hash('jamero123', PASSWORD_DEFAULT),
+                'role'          => 'teacher',
+            ],
         ];
 
         $userModel = new UserModel();

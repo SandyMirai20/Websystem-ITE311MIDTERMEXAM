@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration
             'name'           => ['type' => 'VARCHAR', 'constraint' => 100],
             'email'          => ['type' => 'VARCHAR', 'constraint' => 191, 'unique' => true],
             'password_hash'  => ['type' => 'VARCHAR', 'constraint' => 255],
-            'role'           => ['type' => 'ENUM', 'constraint' => ['admin', 'student'], 'default' => 'student'],
+            'role'           => ['type' => 'ENUM', 'constraint' => ['admin', 'student', 'teacher'], 'default' => 'student'],
             'created_at'     => ['type' => 'DATETIME', 'null' => true],
             'updated_at'     => ['type' => 'DATETIME', 'null' => true],
         ]);

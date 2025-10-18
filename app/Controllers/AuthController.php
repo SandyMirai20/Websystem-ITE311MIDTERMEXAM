@@ -42,7 +42,17 @@ class AuthController extends BaseController
             'isLoggedIn' => true,
         ]);
 
-        return redirect()->to('/dashboard')->with('success', 'Welcome back!');
+        // Role-based redirection
+        switch ($user['role']) {
+            case 'student':
+                return redirect()->to('/announcements')->with('success', 'Welcome back!');
+            case 'teacher':
+                return redirect()->to('/teacher/dashboard')->with('success', 'Welcome back!');
+            case 'admin':
+                return redirect()->to('/admin/dashboard')->with('success', 'Welcome back!');
+            default:
+                return redirect()->to('/dashboard')->with('success', 'Welcome back!');
+        }
     }
 
     public function register()
@@ -61,7 +71,7 @@ class AuthController extends BaseController
             'email'        => 'required|valid_email|is_unique[users.email]',
             'password'     => 'required|min_length[6]',
             'pass_confirm' => 'required|matches[password]',
-            'role'         => 'in_list[admin,student]',
+            'role'         => 'in_list[admin,student,teacher]',
         ];
 
         if ($role === 'student') {
@@ -105,7 +115,17 @@ class AuthController extends BaseController
             'isLoggedIn' => true,
         ]);
 
-        return redirect()->to('/dashboard')->with('success', 'Registration successful.');
+        // Role-based redirection after registration
+        switch ($role) {
+            case 'student':
+                return redirect()->to('/announcements')->with('success', 'Registration successful.');
+            case 'teacher':
+                return redirect()->to('/teacher/dashboard')->with('success', 'Registration successful.');
+            case 'admin':
+                return redirect()->to('/admin/dashboard')->with('success', 'Registration successful.');
+            default:
+                return redirect()->to('/dashboard')->with('success', 'Registration successful.');
+        }
     }
 
     public function logout()

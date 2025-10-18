@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Student Portal • Login</title>
+  <title>RMMC Portal • Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    body { font-family: 'Poppins', sans-serif; }
     .brand-panel { background:#0b0b8b; }
     .brand-panel .logo { width: 120px; height: 120px; border-radius:50%; background:rgba(255,255,255,.15); display:inline-flex; align-items:center; justify-content:center; font-size:36px; }
+    .brand-panel .h3 { font-weight: 600; letter-spacing: -0.5px; }
+    .brand-panel .lead { font-weight: 400; opacity: 0.9; }
     .divider { display:flex; align-items:center; }
     .divider::before, .divider::after { content:""; flex:1; border-top:1px solid #dee2e6; }
     .divider span { margin: 0 .75rem; color:#6c757d; font-size:.9rem; }
-    .btn-brand { background:#0b0b8b; border-color:#0b0b8b; }
+    .btn-brand { background:#0b0b8b; border-color:#0b0b8b; font-weight: 500; }
     .btn-brand:hover { background:#0a0a7a; border-color:#0a0a7a; }
   </style>
 </head>
@@ -22,7 +26,7 @@
       <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center justify-content-center text-white brand-panel">
         <div class="text-center px-4">
           <div class="logo"><img src="https://rmmc.edu.ph/public/images/high_quality_logo.png" alt="School Logo" style="width: 80px; height: 80px; object-fit: contain;"></div>
-          <div class="h3 fw-bold mb-1">Student Portal</div>
+          <div class="h3 fw-bold mb-1">RMMC Portal</div>
           <div class="lead">Ramon Magsaysay Memorial College</div>
         </div>
       </div>

@@ -21,10 +21,12 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
     $routes->get('/courses', 'CoursesController::index');
     $routes->get('/grades', 'GradesController::index');
     $routes->get('/announcements', 'Announcement::index');
+    $routes->get('/teacher/dashboard', 'Teacher::dashboard');
 });
 
 // Admin routes
 $routes->group('admin', ['filter' => 'admin'], static function ($routes) {
+    $routes->get('dashboard', 'Admin\Admin::dashboard');
     $routes->get('students', 'Admin\StudentsController::index');
     $routes->get('students/create', 'Admin\StudentsController::create');
     $routes->post('students/create', 'Admin\StudentsController::store');

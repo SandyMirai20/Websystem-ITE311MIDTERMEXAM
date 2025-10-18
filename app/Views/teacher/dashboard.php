@@ -2,6 +2,6 @@
 
 <?php $this->section('content'); ?>
 
-Welcome, Admin!.
+Welcome, Teacher!.
 
 <?php $this->endSection(); ?>
